@@ -1,0 +1,9 @@
+applications:
+- name: load-generator
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  no-route: true
+  stack: cflinuxfs2
+  command: bundle exec ruby load_generator.rb YOUR_URL 5
+  health-check-type: none
