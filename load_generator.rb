@@ -1,13 +1,10 @@
+#!/usr/bin/ruby
+
 require 'open-uri'
 require 'openssl'
 
-uri = ARGV[0]
-time_interval = ARGV[1].to_i
-
-if(ARGV.length != 2) 
-	puts "Enter url followed by time time interval in seconds"
-	exit
-end
+uri = ENV["uri"]
+time_interval = ENV["time_interval_in_seconds"]
 
 def load_generator (uri, time_interval_in_seconds)
   	while true do
@@ -18,4 +15,4 @@ def load_generator (uri, time_interval_in_seconds)
   	end
 end
 
-load_generator(uri, time_interval)
+load_generator(uri, time_interval.to_i)
