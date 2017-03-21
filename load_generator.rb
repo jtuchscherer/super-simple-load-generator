@@ -12,7 +12,7 @@ time_interval = ENV["time_interval_in_seconds"]
 def load_generator (uri, time_interval_in_seconds)
   	while true do
 		open(uri, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}) do |response|
-  			puts response.status
+  			puts "#{response.base_uri} returned #{response.status}"
 		end
 		sleep time_interval_in_seconds
   	end
