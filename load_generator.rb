@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+$stdout.sync = true
+$stderr.sync = true
+
 require 'open-uri'
 require 'openssl'
 
