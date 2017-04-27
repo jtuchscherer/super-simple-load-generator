@@ -7,15 +7,16 @@ require 'open-uri'
 require 'openssl'
 
 uri = ENV["uri"]
-time_interval = ENV["time_interval_in_seconds"]
+time_start = ENV["lower_bound"]
+time_end = ENV["upper_bound"]
 
-def load_generator (uri, time_interval_in_seconds)
+def load_generator (uri, time_start, time_end)
   	while true do
 		open(uri, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}) do |response|
   			puts "#{response.base_uri} returned #{response.status}"
 		end
-		sleep time_interval_in_seconds
+		sleep Random.rand(time_start..time_end)
   	end
 end
 
-load_generator(uri, time_interval.to_i)
+load_generator(uri, time_start.to_f, time_end.to_f)
