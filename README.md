@@ -19,7 +19,9 @@ lower_bound
 upper_bound
 ```
 
-4. Comma separated url paths that will be appended to the base URL before making the request
+4. Comma separated url paths that will be appended to the base URL before making the request. 
+Leave it empty if you only want to hit the base url 
+
 ```
 url_paths
 ```
